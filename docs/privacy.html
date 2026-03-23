@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – Tamil Bible With AI</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #f5f7fa;
+      color: #1a1a2e;
+      line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(135deg, #1a472a 0%, #2d6a4f 100%);
+      color: white;
+      padding: 40px 24px 32px;
+      text-align: center;
+    }
+    header img {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+      margin-bottom: 12px;
+    }
+    header h1 { font-size: 1.8rem; font-weight: 700; }
+    header p { font-size: 0.95rem; opacity: 0.85; margin-top: 4px; }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      padding: 16px;
+      background: white;
+      border-bottom: 1px solid #e0e0e0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      color: #2d6a4f;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 2px solid #2d6a4f;
+      transition: all 0.2s;
+    }
+    nav a:hover, nav a.active {
+      background: #2d6a4f;
+      color: white;
+    }
+    .container {
+      max-width: 820px;
+      margin: 40px auto;
+      padding: 0 20px 60px;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    }
+    .card h2 {
+      font-size: 1.5rem;
+      color: #1a472a;
+      margin-bottom: 8px;
+    }
+    .updated {
+      color: #888;
+      font-size: 0.85rem;
+      margin-bottom: 32px;
+      display: block;
+    }
+    h3 {
+      font-size: 1.05rem;
+      color: #1a472a;
+      margin: 28px 0 10px;
+      padding-left: 12px;
+      border-left: 4px solid #2d6a4f;
+    }
+    p, li { font-size: 0.97rem; color: #333; margin-bottom: 8px; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 6px; }
+    a { color: #2d6a4f; }
+    .highlight {
+      background: #e8f5e9;
+      border: 1px solid #a5d6a7;
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 0.93rem;
+    }
+    .warning {
+      background: #fff8e1;
+      border: 1px solid #ffe082;
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 0.93rem;
+    }
+    footer {
+      text-align: center;
+      color: #aaa;
+      font-size: 0.85rem;
+      padding: 32px 16px;
+    }
+    footer a { color: #2d6a4f; }
+    @media (max-width: 600px) {
+      .card { padding: 24px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Tamil Bible With AI</h1>
+  <p>Privacy Policy</p>
+</header>
+
+<nav>
+  <a href="privacy.html" class="active">Privacy Policy</a>
+  <a href="terms.html">Terms & Conditions</a>
+</nav>
+
+<div class="container">
+  <div class="card">
+    <h2>Privacy Policy</h2>
+    <span class="updated">Last Updated: March 21, 2026</span>
+
+    <h3>1. Introduction</h3>
+    <p>Tamil Bible With AI ("App", "we", "us", "our") is developed and operated by OswaldStack. We are committed to protecting your personal information and your right to privacy. This policy describes what information we collect, how we use it, and your rights.</p>
+
+    <h3>2. Information We Collect</h3>
+
+    <p><strong>a) Device & Identity</strong></p>
+    <div class="highlight">
+      ✅ We do NOT require registration, login, or any personally identifiable information to use core Bible features. AI chat uses an anonymous session — no name, email, or password required.
+    </div>
+
+    <p><strong>b) Push Notification Token (FCM)</strong></p>
+    <p>To deliver "Daily Verse" push notifications, we collect your device's Firebase Cloud Messaging (FCM) token. This token is device-specific, anonymised, and stored securely in our Supabase database. It is used solely to deliver notifications you have opted into.</p>
+
+    <p><strong>c) Crash Reports & Analytics</strong></p>
+    <ul>
+      <li>We use Firebase Crashlytics to automatically collect anonymised crash reports (device type, OS version, stack trace). No personal information is included.</li>
+      <li>Google AdMob may collect anonymised device identifiers to serve relevant advertisements. See Section 4.</li>
+    </ul>
+
+    <p><strong>d) User Media</strong></p>
+    <div class="highlight">
+      ✅ WE DO NOT UPLOAD, STORE, OR SHARE ANY PHOTOS OR IMAGES FROM YOUR DEVICE. Background removal uses our own self-hosted AWS Lambda — the image is processed and immediately discarded. No image is ever retained.
+    </div>
+
+    <p><strong>e) AI Chat</strong></p>
+    <p>Your text query is sent to our backend (Supabase Edge Function) to generate a response. Chat history is stored locally on your device only (SQLite) and is never uploaded to any server.</p>
+
+    <h3>3. How We Use Your Information</h3>
+    <ul>
+      <li><strong>FCM token:</strong> To send opted-in push notifications (Daily Verse, updates).</li>
+      <li><strong>Crash data:</strong> To diagnose and fix app issues.</li>
+      <li><strong>Ad identifiers:</strong> To serve advertisements via Google AdMob.</li>
+    </ul>
+
+    <h3>4. Third-Party Services</h3>
+    <ul>
+      <li><a href="https://policies.google.com/privacy" target="_blank">Google AdMob</a> – Advertising</li>
+      <li><a href="https://firebase.google.com/support/privacy" target="_blank">Firebase (Google)</a> – Crashlytics & Push Messaging</li>
+      <li><a href="https://supabase.com/privacy" target="_blank">Supabase</a> – AI chat backend & notification tokens</li>
+      <li><a href="https://aws.amazon.com/privacy/" target="_blank">AWS Lambda</a> – Image processing (no data retained)</li>
+    </ul>
+
+    <h3>5. Children's Privacy (COPPA)</h3>
+    <p>This App is rated <strong>G (General Audiences)</strong> and is safe for all ages. We do NOT knowingly collect any personally identifiable information from children under 13. All advertisements are configured with child-directed treatment and G-rated content only. If you believe your child has inadvertently provided personal data, contact us immediately at <a href="mailto:contact@oswaldstack.com">contact@oswaldstack.com</a>.</p>
+
+    <h3>6. Your Rights (GDPR / CCPA)</h3>
+    <p>Depending on your jurisdiction, you may have the right to:</p>
+    <ul>
+      <li>Request access to the personal data we hold about you.</li>
+      <li>Request deletion of your FCM notification token and any associated data.</li>
+      <li>Opt out of personalised advertising (via Google Ads Settings on your device).</li>
+    </ul>
+    <p>To exercise these rights, email <a href="mailto:contact@oswaldstack.com">contact@oswaldstack.com</a>. We will respond within 30 days.</p>
+
+    <h3>7. Data Retention</h3>
+    <ul>
+      <li>FCM tokens are retained until you uninstall the App or request deletion.</li>
+      <li>Crash reports are retained for up to 90 days by Firebase.</li>
+      <li>No image or photo data is retained by us at any time.</li>
+    </ul>
+
+    <h3>8. Data Security</h3>
+    <p>We implement commercially reasonable security measures including HTTPS encryption for all network communication, Supabase Row-Level Security (RLS) for database protection, and no plaintext storage of sensitive credentials.</p>
+
+    <h3>9. Changes to This Policy</h3>
+    <p>We may update this Privacy Policy from time to time. Continued use of the App after changes constitutes your acceptance.</p>
+
+    <h3>10. Contact Us</h3>
+    <p>For questions, data requests, or concerns:<br/>
+    📧 <a href="mailto:contact@oswaldstack.com">contact@oswaldstack.com</a><br/>
+    Developer: OswaldStack</p>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 OswaldStack · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms & Conditions</a></p>
+</footer>
+
+</body>
+</html>
