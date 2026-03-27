@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy – Tamil Bible With AI</title>
+  <title>Privacy Policy – Tamil AI Bible</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -17,12 +17,6 @@
       color: white;
       padding: 40px 24px 32px;
       text-align: center;
-    }
-    header img {
-      width: 72px;
-      height: 72px;
-      border-radius: 16px;
-      margin-bottom: 12px;
     }
     header h1 { font-size: 1.8rem; font-weight: 700; }
     header p { font-size: 0.95rem; opacity: 0.85; margin-top: 4px; }
@@ -115,26 +109,26 @@
 <body>
 
 <header>
-  <h1>Tamil Bible With AI</h1>
+  <h1>Tamil AI Bible</h1>
   <p>Privacy Policy</p>
 </header>
 
 <nav>
   <a href="privacy.html" class="active">Privacy Policy</a>
-  <a href="terms.html">Terms & Conditions</a>
+  <a href="terms.html">Terms &amp; Conditions</a>
 </nav>
 
 <div class="container">
   <div class="card">
     <h2>Privacy Policy</h2>
-    <span class="updated">Last Updated: March 21, 2026</span>
+    <span class="updated">Last Updated: March 16, 2026</span>
 
     <h3>1. Introduction</h3>
-    <p>Tamil Bible With AI ("App", "we", "us", "our") is developed and operated by OswaldStack. We are committed to protecting your personal information and your right to privacy. This policy describes what information we collect, how we use it, and your rights.</p>
+    <p>Tamil AI Bible ("App", "we", "us", "our") is developed and operated by OswaldStack. We are committed to protecting your personal information and your right to privacy. This policy describes what information we collect, how we use it, and your rights.</p>
 
     <h3>2. Information We Collect</h3>
 
-    <p><strong>a) Device & Identity</strong></p>
+    <p><strong>a) Device &amp; Identity</strong></p>
     <div class="highlight">
       ✅ We do NOT require registration, login, or any personally identifiable information to use core Bible features. AI chat uses an anonymous session — no name, email, or password required.
     </div>
@@ -142,55 +136,77 @@
     <p><strong>b) Push Notification Token (FCM)</strong></p>
     <p>To deliver "Daily Verse" push notifications, we collect your device's Firebase Cloud Messaging (FCM) token. This token is device-specific, anonymised, and stored securely in our Supabase database. It is used solely to deliver notifications you have opted into.</p>
 
-    <p><strong>c) Crash Reports & Analytics</strong></p>
+    <p><strong>c) Crash Reports &amp; Analytics</strong></p>
     <ul>
       <li>We use Firebase Crashlytics to automatically collect anonymised crash reports (device type, OS version, stack trace). No personal information is included.</li>
       <li>Google AdMob may collect anonymised device identifiers to serve relevant advertisements. See Section 4.</li>
     </ul>
 
+    <p><strong>d) Background Task Scheduling</strong></p>
+    <p>The App uses Android WorkManager / local scheduling to run reminders such as Daily Verse and engagement notifications. These tasks run on your device and are used only to deliver opted-in reminders. You can disable notifications any time in App Settings.</p>
 
-    <p><strong>e) AI Chat</strong></p>
-    <p>Your text query is sent to our backend (Supabase Edge Function) to generate a response. Chat history is stored locally on your device only (SQLite) and is never uploaded to any server.</p>
+    <p><strong>e) Media Saved to Gallery</strong></p>
+    <p>When you choose to save a verse card image or video to your device gallery, the App requests access to your media storage. We only write the file you explicitly requested — we do not read, scan, or upload any existing media from your gallery.</p>
+
+    <p><strong>f) User Activity &amp; Streak Data</strong></p>
+    <p>The App locally tracks your daily usage streak (consecutive days of opening the App) and quiz completion status to power the Engagement Strip on the home screen. This data is stored exclusively on your device and is never uploaded to any server.</p>
+
+    <p><strong>g) AI Chat</strong></p>
+    <p>Your text query is sent to our backend (Supabase Edge Function) to generate a response. Chat history is stored on-device for app functionality and may sync only where required by active app features. We do not sell your personal data.</p>
 
     <h3>3. How We Use Your Information</h3>
     <ul>
-      <li><strong>FCM token:</strong> To send opted-in push notifications (Daily Verse, updates).</li>
+      <li><strong>FCM token:</strong> To send opted-in push notifications (Daily Verse and reminders).</li>
       <li><strong>Crash data:</strong> To diagnose and fix app issues.</li>
       <li><strong>Ad identifiers:</strong> To serve advertisements via Google AdMob.</li>
+      <li><strong>Gallery permission:</strong> Only to save verse card images/videos you explicitly export.</li>
+      <li><strong>Local streak/quiz data:</strong> To display your streak counter and progress features in the app.</li>
     </ul>
 
     <h3>4. Third-Party Services</h3>
     <ul>
       <li><a href="https://policies.google.com/privacy" target="_blank">Google AdMob</a> – Advertising</li>
-      <li><a href="https://firebase.google.com/support/privacy" target="_blank">Firebase (Google)</a> – Crashlytics & Push Messaging</li>
-      <li><a href="https://supabase.com/privacy" target="_blank">Supabase</a> – AI chat backend & notification tokens</li>
+      <li><a href="https://firebase.google.com/support/privacy" target="_blank">Firebase (Google)</a> – Crashlytics &amp; Push Messaging</li>
+      <li><a href="https://supabase.com/privacy" target="_blank">Supabase</a> – AI chat backend &amp; notification tokens</li>
     </ul>
 
-    <h3>5. Children's Privacy (COPPA)</h3>
-    <p>This App is rated <strong>G (General Audiences)</strong> and is safe for all ages. We do NOT knowingly collect any personally identifiable information from children under 13. All advertisements are configured with child-directed treatment and G-rated content only. If you believe your child has inadvertently provided personal data, contact us immediately at <a href="mailto:contact@oswaldstack.com">contact@oswaldstack.com</a>.</p>
+    <h3>5. Permissions We Request</h3>
+    <ul>
+      <li><strong>INTERNET:</strong> Required for AI chat, push notifications, and downloading media templates.</li>
+      <li><strong>POST_NOTIFICATIONS:</strong> Required on Android 13+ to show Daily Verse notifications.</li>
+      <li><strong>READ_MEDIA_IMAGES / READ_MEDIA_VIDEO:</strong> Required to select background images or videos from your gallery for verse cards.</li>
+      <li><strong>RECEIVE_BOOT_COMPLETED:</strong> Required to re-register WorkManager background tasks after device restart.</li>
+    </ul>
+    <div class="highlight">
+      ✅ All permissions are requested only when needed and only with your explicit consent. No permission is used for any purpose beyond its stated function.
+    </div>
 
-    <h3>6. Your Rights (GDPR / CCPA)</h3>
+    <h3>6. Children's Privacy</h3>
+    <p>This app is intended for a general audience. We do not knowingly collect personal information from children under 13. If you believe a child has provided personal data, contact us at <a href="mailto:contact@oswaldstack.com">contact@oswaldstack.com</a>, and we will review and delete data where legally required.</p>
+
+    <h3>7. Your Rights</h3>
     <p>Depending on your jurisdiction, you may have the right to:</p>
     <ul>
       <li>Request access to the personal data we hold about you.</li>
-      <li>Request deletion of your FCM notification token and any associated data.</li>
+      <li>Request deletion of your FCM notification token and associated records where applicable.</li>
       <li>Opt out of personalised advertising (via Google Ads Settings on your device).</li>
     </ul>
     <p>To exercise these rights, email <a href="mailto:contact@oswaldstack.com">contact@oswaldstack.com</a>. We will respond within 30 days.</p>
 
-    <h3>7. Data Retention</h3>
+    <h3>8. Data Retention</h3>
     <ul>
       <li>FCM tokens are retained until you uninstall the App or request deletion.</li>
       <li>Crash reports are retained for up to 90 days by Firebase.</li>
+      <li>Local streak and quiz data are removed when you clear app data or uninstall the app.</li>
     </ul>
 
-    <h3>8. Data Security</h3>
+    <h3>9. Data Security</h3>
     <p>We implement commercially reasonable security measures including HTTPS encryption for all network communication, Supabase Row-Level Security (RLS) for database protection, and no plaintext storage of sensitive credentials.</p>
 
-    <h3>9. Changes to This Policy</h3>
+    <h3>10. Changes to This Policy</h3>
     <p>We may update this Privacy Policy from time to time. Continued use of the App after changes constitutes your acceptance.</p>
 
-    <h3>10. Contact Us</h3>
+    <h3>11. Contact Us</h3>
     <p>For questions, data requests, or concerns:<br/>
     📧 <a href="mailto:contact@oswaldstack.com">contact@oswaldstack.com</a><br/>
     Developer: OswaldStack</p>
@@ -198,7 +214,7 @@
 </div>
 
 <footer>
-  <p>&copy; 2026 OswaldStack · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms & Conditions</a></p>
+  <p>&copy; 2026 OswaldStack · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></p>
 </footer>
 
 </body>
