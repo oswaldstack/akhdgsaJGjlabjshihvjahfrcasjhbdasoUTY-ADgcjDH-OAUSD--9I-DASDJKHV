@@ -13,13 +13,13 @@
       line-height: 1.7;
     }
     header {
-      background: linear-gradient(135deg, #1a472a 0%, #2d6a4f 100%);
+      background: linear-gradient(135deg, #c2185b 0%, #e91e8c 100%);
       color: white;
       padding: 40px 24px 32px;
       text-align: center;
     }
     header h1 { font-size: 1.8rem; font-weight: 700; }
-    header p { font-size: 0.95rem; opacity: 0.85; margin-top: 4px; }
+    header p  { font-size: 0.95rem; opacity: 0.85; margin-top: 4px; }
     nav {
       display: flex;
       justify-content: center;
@@ -32,17 +32,17 @@
       z-index: 10;
     }
     nav a {
-      color: #2d6a4f;
+      color: #c2185b;
       text-decoration: none;
       font-weight: 600;
       font-size: 0.95rem;
       padding: 6px 14px;
       border-radius: 20px;
-      border: 2px solid #2d6a4f;
+      border: 2px solid #c2185b;
       transition: all 0.2s;
     }
     nav a:hover, nav a.active {
-      background: #2d6a4f;
+      background: #c2185b;
       color: white;
     }
     .container {
@@ -58,7 +58,7 @@
     }
     .card h2 {
       font-size: 1.5rem;
-      color: #1a472a;
+      color: #c2185b;
       margin-bottom: 8px;
     }
     .updated {
@@ -69,18 +69,18 @@
     }
     h3 {
       font-size: 1.05rem;
-      color: #1a472a;
+      color: #c2185b;
       margin: 28px 0 10px;
       padding-left: 12px;
-      border-left: 4px solid #2d6a4f;
+      border-left: 4px solid #e91e8c;
     }
     p, li { font-size: 0.97rem; color: #333; margin-bottom: 8px; }
     ul { padding-left: 20px; }
     li { margin-bottom: 6px; }
-    a { color: #2d6a4f; }
+    a { color: #c2185b; }
     .highlight {
-      background: #e8f5e9;
-      border: 1px solid #a5d6a7;
+      background: #fce4ec;
+      border: 1px solid #f48fb1;
       border-radius: 10px;
       padding: 14px 18px;
       margin: 16px 0;
@@ -100,7 +100,7 @@
       font-size: 0.85rem;
       padding: 32px 16px;
     }
-    footer a { color: #2d6a4f; }
+    footer a { color: #c2185b; }
     @media (max-width: 600px) {
       .card { padding: 24px 16px; }
     }
@@ -121,10 +121,11 @@
 <div class="container">
   <div class="card">
     <h2>Privacy Policy</h2>
-    <span class="updated">Last Updated: March 16, 2026</span>
+    <span class="updated">Last Updated: April 6, 2026</span>
 
     <h3>1. Introduction</h3>
     <p>Tamil Bible With AI ("App", "we", "us", "our") is developed and operated by OswaldStack. We are committed to protecting your personal information and your right to privacy. This policy describes what information we collect, how we use it, and your rights.</p>
+    <p>App available on Google Play: <a href="https://play.google.com/store/apps/details?id=com.oswaldstack.tamilbibleai" target="_blank">play.google.com/store/apps/details?id=com.oswaldstack.tamilbibleai</a></p>
 
     <h3>2. Information We Collect</h3>
 
@@ -154,6 +155,9 @@
     <p><strong>g) AI Chat</strong></p>
     <p>Your text query is sent to our backend (Supabase Edge Function) to generate a response. Chat history is stored on-device for app functionality and may sync only where required by active app features. We do not sell your personal data.</p>
 
+    <p><strong>h) Audio Bible &amp; Screen Wake-Lock</strong></p>
+    <p>When using the Audio Bible feature, the App requests a temporary screen wake-lock to keep your device display on while scripture is being read aloud. This wake-lock is automatically released when audio playback stops or is paused. No data is collected or transmitted as part of this feature.</p>
+
     <h3>3. How We Use Your Information</h3>
     <ul>
       <li><strong>FCM token:</strong> To send opted-in push notifications (Daily Verse and reminders).</li>
@@ -161,6 +165,7 @@
       <li><strong>Ad identifiers:</strong> To serve advertisements via Google AdMob.</li>
       <li><strong>Gallery permission:</strong> Only to save verse card images/videos you explicitly export.</li>
       <li><strong>Local streak/quiz data:</strong> To display your streak counter and progress features in the app.</li>
+      <li><strong>Wake-lock:</strong> To keep the screen on during Audio Bible playback only.</li>
     </ul>
 
     <h3>4. Third-Party Services</h3>
@@ -176,6 +181,7 @@
       <li><strong>POST_NOTIFICATIONS:</strong> Required on Android 13+ to show Daily Verse notifications.</li>
       <li><strong>READ_MEDIA_IMAGES / READ_MEDIA_VIDEO:</strong> Required to select background images or videos from your gallery for verse cards.</li>
       <li><strong>RECEIVE_BOOT_COMPLETED:</strong> Required to re-register WorkManager background tasks after device restart.</li>
+      <li><strong>WAKE_LOCK:</strong> Required to keep the screen active during Audio Bible playback. Released automatically when playback ends.</li>
     </ul>
     <div class="highlight">
       ✅ All permissions are requested only when needed and only with your explicit consent. No permission is used for any purpose beyond its stated function.
@@ -214,7 +220,7 @@
 </div>
 
 <footer>
-  <p>&copy; 2026 OswaldStack · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></p>
+  <p>&copy; 2026 OswaldStack · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a> · <a href="https://play.google.com/store/apps/details?id=com.oswaldstack.tamilbibleai" target="_blank">Google Play</a></p>
 </footer>
 
 </body>
