@@ -94,6 +94,27 @@
       margin: 16px 0;
       font-size: 0.93rem;
     }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.92rem;
+    }
+    .data-table th {
+      background: #fce4ec;
+      color: #c2185b;
+      padding: 10px 14px;
+      text-align: left;
+      border: 1px solid #f48fb1;
+    }
+    .data-table td {
+      padding: 9px 14px;
+      border: 1px solid #e0e0e0;
+      vertical-align: top;
+    }
+    .data-table tr:nth-child(even) td { background: #fafafa; }
+    .yes  { color: #d32f2f; font-weight: 700; }
+    .no   { color: #388e3c; font-weight: 700; }
     footer {
       text-align: center;
       color: #aaa;
@@ -103,6 +124,7 @@
     footer a { color: #c2185b; }
     @media (max-width: 600px) {
       .card { padding: 24px 16px; }
+      .data-table { font-size: 0.82rem; }
     }
   </style>
 </head>
@@ -121,13 +143,106 @@
 <div class="container">
   <div class="card">
     <h2>Privacy Policy</h2>
-    <span class="updated">Last Updated: April 6, 2026</span>
+    <span class="updated">Last Updated: April 22, 2026</span>
 
     <h3>1. Introduction</h3>
     <p>Tamil Bible With AI ("App", "we", "us", "our") is developed and operated by OswaldStack. We are committed to protecting your personal information and your right to privacy. This policy describes what information we collect, how we use it, and your rights.</p>
     <p>App available on Google Play: <a href="https://play.google.com/store/apps/details?id=com.oswaldstack.tamilbibleai" target="_blank">play.google.com/store/apps/details?id=com.oswaldstack.tamilbibleai</a></p>
 
-    <h3>2. Information We Collect</h3>
+    <h3>2. Play Store Data Safety Summary</h3>
+    <p>The table below summarises exactly what data this App collects and shares, as disclosed in the Google Play Data Safety form.</p>
+    <table class="data-table">
+      <tr>
+        <th>Data Type</th>
+        <th>Collected?</th>
+        <th>Shared?</th>
+        <th>Purpose</th>
+        <th>Encrypted?</th>
+        <th>Deletion Possible?</th>
+      </tr>
+      <tr>
+        <td>Device / App Info (crash logs)</td>
+        <td class="yes">Yes</td>
+        <td>Firebase only</td>
+        <td>App stability &amp; diagnostics</td>
+        <td>Yes (HTTPS)</td>
+        <td>Auto-deleted after 90 days</td>
+      </tr>
+      <tr>
+        <td>App interactions / Analytics</td>
+        <td class="yes">Yes</td>
+        <td>Firebase only</td>
+        <td>Understand feature usage</td>
+        <td>Yes (HTTPS)</td>
+        <td>Yes – via Google account settings</td>
+      </tr>
+      <tr>
+        <td>Device (FCM) push token</td>
+        <td class="yes">Yes</td>
+        <td>Supabase (our server)</td>
+        <td>Deliver opted-in Daily Verse notifications</td>
+        <td>Yes (HTTPS + RLS)</td>
+        <td>Yes – email request (see §10)</td>
+      </tr>
+      <tr>
+        <td>Advertising ID</td>
+        <td class="yes">Yes</td>
+        <td>Google AdMob</td>
+        <td>Serve relevant ads</td>
+        <td>Yes (HTTPS)</td>
+        <td>Yes – reset via Android settings</td>
+      </tr>
+      <tr>
+        <td>AI chat messages (text)</td>
+        <td class="yes">Yes (transient)</td>
+        <td>Supabase Edge Function</td>
+        <td>Generate AI Bible response</td>
+        <td>Yes (HTTPS)</td>
+        <td>Not retained server-side after response</td>
+      </tr>
+      <tr>
+        <td>Name / Email / Phone</td>
+        <td class="no">No</td>
+        <td class="no">No</td>
+        <td>Not collected</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Location</td>
+        <td class="no">No</td>
+        <td class="no">No</td>
+        <td>Not collected</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Contacts / Calendar</td>
+        <td class="no">No</td>
+        <td class="no">No</td>
+        <td>Not collected</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Quiz progress, coins, XP, lives</td>
+        <td>Device only</td>
+        <td class="no">No</td>
+        <td>Power quiz reward system</td>
+        <td>N/A (local)</td>
+        <td>Yes – clear app data / uninstall</td>
+      </tr>
+      <tr>
+        <td>Song favourites</td>
+        <td>Device only</td>
+        <td class="no">No</td>
+        <td>Remember starred songs</td>
+        <td>N/A (local)</td>
+        <td>Yes – clear app data / uninstall</td>
+      </tr>
+    </table>
+
+    <h3>3. Information We Collect</h3>
 
     <p><strong>a) Device &amp; Identity</strong></p>
     <div class="highlight">
@@ -141,7 +256,7 @@
     <ul>
       <li>We use Firebase Crashlytics to automatically collect anonymised crash reports (device type, OS version, stack trace). No personal information is included.</li>
       <li>We use Firebase Analytics to track app usage, including screen views and screen duration, to help us understand how users navigate the app and to improve our features. This data is fully anonymised.</li>
-      <li>Google AdMob may collect anonymised device identifiers to serve relevant advertisements. See Section 4.</li>
+      <li>Google AdMob may collect anonymised device identifiers and advertising IDs to serve relevant advertisements. See Section 5.</li>
     </ul>
 
     <p><strong>d) Background Task Scheduling</strong></p>
@@ -154,12 +269,35 @@
     <p>The App locally tracks your daily usage streak (consecutive days of opening the App) and quiz completion status to power the Engagement Strip on the home screen. This data is stored exclusively on your device and is never uploaded to any server.</p>
 
     <p><strong>g) AI Chat</strong></p>
-    <p>Your text query is sent to our backend (Supabase Edge Function) to generate a response. Chat history is stored on-device for app functionality and may sync only where required by active app features. We do not sell your personal data.</p>
+    <p>Your text query is sent to our backend (Supabase Edge Function) to generate a response. The message is processed transiently and is not stored server-side after the response is returned. Chat history is stored on-device for app functionality only. We do not sell your personal data.</p>
 
     <p><strong>h) Audio Bible &amp; Screen Wake-Lock</strong></p>
     <p>When using the Audio Bible feature, the App requests a temporary screen wake-lock to keep your device display on while scripture is being read aloud. This wake-lock is automatically released when audio playback stops or is paused. No data is collected or transmitted as part of this feature.</p>
 
-    <h3>3. How We Use Your Information</h3>
+    <p><strong>i) Song Favourites &amp; Local Preferences</strong></p>
+    <p>When you star a song as a favourite, the selected song ID is saved exclusively on your device using Android SharedPreferences. This data is never uploaded to any server, shared with third parties, or used for any purpose other than displaying your personal favourites list within the App. Favourites are removed when you clear app data or uninstall the App.</p>
+
+    <p><strong>j) In-Memory Song Title Cache</strong></p>
+    <p>When you open the Songs section, the App fetches all song titles from our Supabase database and stores them temporarily in device memory (RAM) for the duration of your current session. This allows instant local search without repeated network requests. This in-memory data is cleared automatically when the App is closed or the session ends and is never written to disk.</p>
+
+    <p><strong>k) Quiz Question Deck (Local Progress Tracking)</strong></p>
+    <p>To ensure quiz questions are never repeated across sessions, the App stores a locally shuffled list of question IDs and a cursor position on your device using Android SharedPreferences. This data (<em>approximately 20–30 KB</em>) is kept entirely on your device and is never uploaded to any server or shared with any third party. The deck is automatically reshuffled with a new random order once all questions have been seen.</p>
+
+    <p><strong>l) Quiz Reward Economy (Coins, XP, Lives, Power-ups)</strong></p>
+    <p>The App maintains a local reward system to track your quiz progress. The following data is stored <strong>exclusively on your device</strong> using Android SharedPreferences and is never transmitted to any server:</p>
+    <ul>
+      <li><strong>Coins &amp; XP:</strong> Accumulated from correct quiz answers. Used to unlock hints and power-ups within the App.</li>
+      <li><strong>Lives (பெலன்கள்):</strong> A limited play currency that regenerates over time or is restored via rewarded ads. Tracked locally.</li>
+      <li><strong>Power-ups (50/50, Hint, Freeze, Shield):</strong> Earned or purchased with coins. Inventory counts stored locally.</li>
+      <li><strong>Level progression &amp; stars:</strong> Your current quiz level, unlocked levels, and star ratings per level.</li>
+      <li><strong>Daily challenge completion:</strong> Whether you have completed the daily challenge today (timestamp stored locally).</li>
+      <li><strong>Streak &amp; badges:</strong> Consecutive quiz play days and earned achievement badges.</li>
+    </ul>
+    <div class="highlight">
+      ✅ All quiz reward data is local-only. None of these values are sent to our servers, used for advertising targeting, or shared with any third party.
+    </div>
+
+    <h3>4. How We Use Your Information</h3>
     <ul>
       <li><strong>FCM token:</strong> To send opted-in push notifications (Daily Verse and reminders).</li>
       <li><strong>Crash data:</strong> To diagnose and fix app issues.</li>
@@ -167,16 +305,29 @@
       <li><strong>Gallery permission:</strong> Only to save verse card images/videos you explicitly export.</li>
       <li><strong>Local streak/quiz data:</strong> To display your streak counter and progress features in the app.</li>
       <li><strong>Wake-lock:</strong> To keep the screen on during Audio Bible playback only.</li>
+      <li><strong>Song Favourites:</strong> To remember and show your starred songs across sessions, stored only on your device.</li>
+      <li><strong>Quiz Deck &amp; Cursor:</strong> To track which quiz questions you have seen and serve fresh, non-repeating questions, stored only on your device.</li>
+      <li><strong>Quiz Rewards (Coins, XP, Lives, Power-ups):</strong> To power the in-app gamification system, stored only on your device.</li>
     </ul>
 
-    <h3>4. Third-Party Services</h3>
+    <h3>5. Advertising (Google AdMob)</h3>
+    <p>The App serves advertisements through Google AdMob. AdMob may use your device's Advertising ID to serve contextually relevant ads. Ads shown include:</p>
+    <ul>
+      <li><strong>Banner ads</strong> — displayed on quiz and home screens.</li>
+      <li><strong>Interstitial ads</strong> — shown at natural break points (e.g. between quiz levels).</li>
+      <li><strong>Rewarded ads</strong> — shown only on your explicit request to earn lives or coins.</li>
+    </ul>
+    <p>You can opt out of personalised advertising at any time via <strong>Android Settings → Privacy → Ads → Opt out of Ads Personalisation</strong>, or by resetting your Advertising ID.</p>
+    <p>AdMob's privacy policy: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>.</p>
+
+    <h3>6. Third-Party Services</h3>
     <ul>
       <li><a href="https://policies.google.com/privacy" target="_blank">Google AdMob</a> – Advertising</li>
-      <li><a href="https://firebase.google.com/support/privacy" target="_blank">Firebase (Google)</a> – Crashlytics &amp; Push Messaging</li>
+      <li><a href="https://firebase.google.com/support/privacy" target="_blank">Firebase (Google)</a> – Crashlytics, Analytics &amp; Push Messaging</li>
       <li><a href="https://supabase.com/privacy" target="_blank">Supabase</a> – AI chat backend &amp; notification tokens</li>
     </ul>
 
-    <h3>5. Permissions We Request</h3>
+    <h3>7. Permissions We Request</h3>
     <ul>
       <li><strong>INTERNET:</strong> Required for AI chat, push notifications, and downloading media templates.</li>
       <li><strong>POST_NOTIFICATIONS:</strong> Required on Android 13+ to show Daily Verse notifications.</li>
@@ -188,32 +339,47 @@
       ✅ All permissions are requested only when needed and only with your explicit consent. No permission is used for any purpose beyond its stated function.
     </div>
 
-    <h3>6. Children's Privacy</h3>
-    <p>This app is intended for a general audience. We do not knowingly collect personal information from children under 13. If you believe a child has provided personal data, contact us at <a href="mailto:oswaldstack@gmail.com">oswaldstack@gmail.com</a>, and we will review and delete data where legally required.</p>
+    <h3>8. Children's Privacy</h3>
+    <p>This app is rated for a general audience. We do not knowingly collect personal information from children under 13. The App is not directed at children. Advertisements are configured via AdMob as <strong>non-child-directed</strong>. If you believe a child has provided personal data, contact us at <a href="mailto:oswaldstack@gmail.com">oswaldstack@gmail.com</a>, and we will review and delete data where legally required.</p>
 
-    <h3>7. Your Rights</h3>
+    <h3>9. Your Rights</h3>
     <p>Depending on your jurisdiction, you may have the right to:</p>
     <ul>
       <li>Request access to the personal data we hold about you.</li>
       <li>Request deletion of your FCM notification token and associated records where applicable.</li>
       <li>Opt out of personalised advertising (via Google Ads Settings on your device).</li>
+      <li>Request that we correct inaccurate data we hold.</li>
     </ul>
     <p>To exercise these rights, email <a href="mailto:oswaldstack@gmail.com">oswaldstack@gmail.com</a>. We will respond within 30 days.</p>
 
-    <h3>8. Data Retention</h3>
+    <h3>10. Account &amp; Data Deletion</h3>
+    <p>The App does not require account creation. However, the following server-side data can be deleted upon request:</p>
+    <ul>
+      <li><strong>FCM notification token</strong> — stored in our Supabase database to enable push notifications.</li>
+    </ul>
+    <p>To request deletion:</p>
+    <ol style="padding-left:20px; margin-bottom:8px;">
+      <li>Email <a href="mailto:oswaldstack@gmail.com">oswaldstack@gmail.com</a> with subject line <em>"Data Deletion Request"</em>.</li>
+      <li>Include your approximate device model and the date you last received a notification (to help us identify your token).</li>
+      <li>We will delete the record within <strong>14 days</strong> and confirm by reply.</li>
+    </ol>
+    <p>All local data (quiz progress, coins, XP, lives, song favourites, reading streaks) is stored only on your device and is permanently deleted when you <strong>clear app data</strong> or <strong>uninstall the App</strong>.</p>
+
+    <h3>11. Data Retention</h3>
     <ul>
       <li>FCM tokens are retained until you uninstall the App or request deletion.</li>
       <li>Crash reports are retained for up to 90 days by Firebase.</li>
-      <li>Local streak and quiz data are removed when you clear app data or uninstall the app.</li>
+      <li>AI chat queries are not retained server-side after a response is returned.</li>
+      <li>Local streak, quiz data, quiz deck progress, reward economy data, song favourites, and song title cache are removed when you clear app data or uninstall the App.</li>
     </ul>
 
-    <h3>9. Data Security</h3>
+    <h3>12. Data Security</h3>
     <p>We implement commercially reasonable security measures including HTTPS encryption for all network communication, Supabase Row-Level Security (RLS) for database protection, and no plaintext storage of sensitive credentials.</p>
 
-    <h3>10. Changes to This Policy</h3>
-    <p>We may update this Privacy Policy from time to time. Continued use of the App after changes constitutes your acceptance.</p>
+    <h3>13. Changes to This Policy</h3>
+    <p>We may update this Privacy Policy from time to time. The "Last Updated" date at the top of this page will be revised accordingly. Continued use of the App after changes constitutes your acceptance.</p>
 
-    <h3>11. Contact Us</h3>
+    <h3>14. Contact Us</h3>
     <p>For questions, data requests, or concerns:<br/>
     📧 <a href="mailto:oswaldstack@gmail.com">oswaldstack@gmail.com</a><br/>
     Developer: OswaldStack</p>
