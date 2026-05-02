@@ -132,7 +132,7 @@
 <div class="container">
   <div class="card">
     <h2>Terms &amp; Conditions</h2>
-    <span class="updated">Last Updated: April 25, 2026</span>
+    <span class="updated">Last Updated: May 2, 2026 &nbsp;·&nbsp; App Version: 1.0.6+10</span>
 
     <h3>1. Acceptance of Terms</h3>
     <p>By downloading, installing, or using the Tamil Bible With AI app ("App"), you agree to be bound by these Terms &amp; Conditions and our <a href="privacy.html">Privacy Policy</a>. If you do not agree, do not use the App.</p>
@@ -148,8 +148,13 @@
 
     <h3>3. AI Chat Feature – Important Disclaimer</h3>
     <div class="warning">
-      ⚠️ The AI Bible Chat is powered by a large language model (LLM) and is provided for <strong>informational and devotional exploration only</strong>. AI responses may contain inaccuracies or errors. Do NOT rely on AI responses for theology, doctrine, medical, legal, or life-critical decisions. Always verify AI-generated Bible references with an authoritative Bible translation.
+      ⚠️ The AI Bible Chat is powered by Google Gemini, a large language model (LLM), and is provided for <strong>informational and devotional exploration only</strong>. AI responses may contain inaccuracies or errors. Do NOT rely on AI responses for theology, doctrine, medical, legal, or life-critical decisions. Always verify AI-generated Bible references with an authoritative Bible translation.
     </div>
+    <ul>
+      <li>AI Chat is an online-only feature. An active internet connection is required.</li>
+      <li>Each session is subject to a daily usage limit (free questions). Additional questions may be unlocked by watching optional rewarded advertisements.</li>
+      <li>We reserve the right to adjust AI usage limits at any time without prior notice.</li>
+    </ul>
 
     <h3>4. Audio Bible Feature</h3>
     <ul>
@@ -158,16 +163,30 @@
       <li>Ad audio is muted during TTS playback to avoid conflicts with scripture reading.</li>
     </ul>
 
-    <h3>5. Advertisements</h3>
+    <h3>5. Church WiFi Presenter</h3>
+    <p>The Church Presenter feature enables you to display Bible verses and Tamil Christian song lyrics on a projector or external screen via your local WiFi network. By using this feature, you acknowledge and agree that:</p>
     <ul>
-      <li>The App displays advertisements via Google AdMob, configured to comply with AdMob policies including <strong>non-child-directed</strong> treatment.</li>
-      <li>Banner ads are displayed on quiz and home screens during normal app use.</li>
-      <li>Interstitial ads may appear at natural break points such as between quiz levels.</li>
-      <li>Rewarded ads are optional and shown only on your explicit request to earn in-app rewards (lives or coins).</li>
+      <li>The Presenter creates a temporary local HTTP and WebSocket server on your device. This server is accessible to any device connected to the <strong>same WiFi network</strong>.</li>
+      <li>You are solely responsible for ensuring the security of the WiFi network on which you use the Presenter. We recommend using this feature only on trusted, password-protected networks (e.g., your church's private WiFi).</li>
+      <li>The Presenter serves Bible content, song lyrics, and app fonts locally. No content is transmitted to OswaldStack servers or any third party.</li>
+      <li>The Presenter server is automatically shut down when you navigate away from the Presenter screen. We are not responsible if the server remains accessible due to unexpected app behaviour on your device.</li>
+      <li>Song lyrics displayed via the Presenter remain subject to the intellectual property terms in Section 12.</li>
+      <li>Thanglish (Tamil written in English letters) display of song lyrics is available where lyrics have been provided by OswaldStack. Accuracy of Thanglish transliterations is provided on a best-effort basis.</li>
+    </ul>
+    <div class="highlight">
+      ✅ The Church Presenter is a local-network-only feature. No slide content or Bible verses are sent to any external server by OswaldStack.
+    </div>
+
+    <h3>6. Advertisements</h3>
+    <ul>
+      <li>The App displays advertisements via Google AdMob, configured to comply with AdMob policies including <strong>non-child-directed</strong> treatment and a maximum ad content rating of <strong>Teens (T)</strong>.</li>
+      <li>Banner ads are displayed on the home screen during normal app use.</li>
+      <li>Interstitial ads may appear at natural break points such as between quiz levels (approximately every other level), ensuring a non-intrusive experience.</li>
+      <li>Rewarded ads are optional and shown only on your explicit request to earn in-app rewards (lives, coins, or AI chat energy).</li>
       <li>We are not responsible for the content of third-party advertisements.</li>
     </ul>
 
-    <h3>6. Virtual Reward Economy (Coins, XP, Lives &amp; Power-ups)</h3>
+    <h3>7. Virtual Reward Economy (Coins, XP, Lives &amp; Power-ups)</h3>
     <div class="highlight">
       ✅ All in-app rewards are virtual and have no real-world monetary value.
     </div>
@@ -180,77 +199,90 @@
       <li>All reward data is stored locally on your device. It may be lost if you clear app data or uninstall the App. We are not responsible for loss of virtual rewards due to device issues, data clearing, or app updates.</li>
     </ul>
 
-    <h3>7. User-Generated Content &amp; Sharing</h3>
+    <h3>8. User-Generated Content &amp; Sharing</h3>
     <ul>
-      <li>You are solely responsible for the content you create using the verse card editor.</li>
-      <li>You must have the legal right to use any photos or images you select.</li>
+      <li>You are solely responsible for the content you create using the verse card editor (images and videos).</li>
+      <li>You must have the legal right to use any photos or images you select as backgrounds.</li>
       <li>You agree NOT to create or share content that is illegal, explicit, offensive, defamatory, or that infringes intellectual property rights.</li>
       <li>Content you save to your device gallery or share via third-party apps (WhatsApp, Instagram, Telegram, etc.) is governed by the respective platform's terms. The developer assumes no liability for user-shared content.</li>
-      <li>All verse card creation and local media export happens entirely on your device.</li>
+      <li>All verse card creation and local media export happens entirely on your device using FFmpeg. Processing is fully offline — no images or videos are uploaded to any server.</li>
+      <li>Video export quality (480p, 720p, 1080p) and gallery save functionality are provided on a best-effort basis and may vary by device.</li>
     </ul>
 
-    <h3>8. Engagement Features (Streaks &amp; Daily Challenges)</h3>
+    <h3>9. Language &amp; Localisation</h3>
+    <ul>
+      <li>The App supports two UI languages: <strong>Tamil</strong> and <strong>English</strong>. You may switch between them at any time in Settings.</li>
+      <li>Tamil Bible text is displayed in Tamil script. Song lyrics are available in Tamil script and, where provided, in Thanglish (Tamil transliterated using English letters) for ease of reading.</li>
+      <li>The accuracy of Thanglish transliterations is provided on a best-effort basis. OswaldStack does not guarantee phonetic precision for all song lyrics.</li>
+      <li>The AI Chat feature responds in the language of your query. Response quality may vary between languages.</li>
+    </ul>
+
+    <h3>10. Engagement Features (Streaks, Daily Challenges &amp; Notifications)</h3>
     <ul>
       <li>The App tracks daily usage streak and quiz completion signals primarily on your device to support engagement features.</li>
       <li>Streak counts and daily quiz badges are for motivational purposes only and carry no monetary value or redeemable reward.</li>
       <li>Song Favourites (starred songs) are stored exclusively on your device. Favourites are not synced to a server or shared with any third party. Clearing app data or uninstalling the App will remove all saved favourites.</li>
       <li>Quiz questions are delivered via a locally shuffled deck stored on your device. The App fetches only the content for your next batch of questions from our servers — your progress through the deck (cursor position) is never sent to any server. Once all questions in the deck are seen, the deck is reshuffled in a new random order for the next cycle.</li>
+      <li>Daily Verse push notifications require your explicit opt-in via Android notification permissions. You can disable them at any time in App Settings or your device's notification settings.</li>
       <li>We reserve the right to modify, reset, or remove engagement features at any time without notice.</li>
     </ul>
 
-    <h3>9. Background Reminders</h3>
+    <h3>11. Background Reminders &amp; In-App Updates</h3>
     <p>The App uses local scheduling services (including Android WorkManager where applicable) for reminders such as Daily Verse and engagement notifications. You can disable reminders at any time in App Settings or via your device's notification settings.</p>
+    <p>The App uses Google Play's In-App Update API to prompt you to install available updates. Mandatory updates may be required to continue using the App. We are not liable for any loss of functionality caused by failure to install a required update.</p>
 
-    <h3>10. Intellectual Property</h3>
+    <h3>12. Intellectual Property</h3>
     <ul>
       <li>The Tamil Bible text (Old Version, O.V.) is in the public domain.</li>
-      <li>The Tamil Christian song lyrics included in the App belong to their respective copyright holders. They are included for personal devotional use only. Unauthorized reproduction or commercial use is prohibited.</li>
-      <li>The App's design, branding, graphics, quiz questions, and source code are the intellectual property of OswaldStack. Unauthorized copying is prohibited.</li>
+      <li>The Tamil Christian song lyrics included in the App belong to their respective copyright holders. They are included for personal and church devotional use only. Unauthorized reproduction or commercial use is prohibited.</li>
+      <li>The App's design, branding, graphics, quiz questions, Thanglish transliterations, Church Presenter system, and source code are the intellectual property of OswaldStack. Unauthorized copying or redistribution is prohibited.</li>
+      <li>Fonts bundled with the App (MuktaMalar, HindMadurai, TiroTamil, Kavivanar) are used under their respective open-source licences (SIL Open Font License).</li>
     </ul>
 
-    <h3>11. In-App Features &amp; Availability</h3>
+    <h3>13. In-App Features &amp; Availability</h3>
     <ul>
       <li>Features may be modified, added, or removed at any time without notice.</li>
-      <li>We do not guarantee uninterrupted availability of AI chat or other network-dependent features.</li>
+      <li>We do not guarantee uninterrupted availability of AI chat, songs, or other network-dependent features.</li>
       <li>Daily AI chat limits (free questions and ad-based bonuses) may be adjusted at any time.</li>
       <li>Video export quality settings (480p, 720p, 1080p) and gallery save functionality are provided on a best-effort basis and may vary by device.</li>
       <li>The Songs section loads all song titles into device memory (RAM) for instant search. This is a session-only cache and does not persist between app launches.</li>
       <li>Quiz questions are served from a locally held, randomly shuffled question deck. Only the question content for your current batch (up to 30 questions) is fetched from our servers per quiz session, reducing network usage and ensuring variety even without an internet connection once the deck is built.</li>
+      <li>The Church WiFi Presenter requires both the presenting device and the display device to be on the same WiFi network. Performance may vary based on network quality.</li>
     </ul>
 
-    <h3>12. Data Deletion</h3>
+    <h3>14. Data Deletion</h3>
     <p>The App does not require account creation. However, the following server-side data can be deleted upon request:</p>
     <ul>
       <li><strong>FCM notification token</strong> — the only data stored on our servers (used for push notifications).</li>
     </ul>
-    <p>To request deletion, email <a href="mailto:oswaldstack@gmail.com">oswaldstack@gmail.com</a> with subject line <em>"Data Deletion Request"</em>. We will process your request within <strong>14 days</strong>.</p>
-    <p>All local data (quiz progress, coins, XP, lives, power-ups, song favourites, reading streaks) is permanently deleted when you <strong>clear app data</strong> or <strong>uninstall the App</strong>.</p>
+    <p>To request deletion, email <a href="mailto:hello@oswaldstack.com">hello@oswaldstack.com</a> with subject line <em>"Data Deletion Request"</em>. We will process your request within <strong>14 days</strong>.</p>
+    <p>All local data (quiz progress, coins, XP, lives, power-ups, song favourites, Bible annotations, reading streaks, language preference) is permanently deleted when you <strong>clear app data</strong> or <strong>uninstall the App</strong>.</p>
 
-    <h3>13. Disclaimer of Warranties</h3>
+    <h3>15. Disclaimer of Warranties</h3>
     <div class="legal">
-      THE APP IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTIES OF ANY KIND. WE DISCLAIM ALL WARRANTIES INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+      THE APP IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTIES OF ANY KIND. WE DISCLAIM ALL WARRANTIES INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. THIS INCLUDES BUT IS NOT LIMITED TO THE CHURCH WIFI PRESENTER FEATURE, WHICH OPERATES ON YOUR LOCAL NETWORK UNDER YOUR SOLE RESPONSIBILITY.
     </div>
 
-    <h3>14. Limitation of Liability</h3>
+    <h3>16. Limitation of Liability</h3>
     <div class="legal">
-      TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE DEVELOPER SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE APP. OUR TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT YOU PAID FOR THE APP IN THE LAST 12 MONTHS (ZERO FOR FREE APPS). WE ARE NOT LIABLE FOR LOSS OF VIRTUAL REWARDS (COINS, XP, LIVES, POWER-UPS) DUE TO APP UPDATES, DEVICE FAILURE, OR DATA CLEARING.
+      TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE DEVELOPER SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE APP. OUR TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT YOU PAID FOR THE APP IN THE LAST 12 MONTHS (ZERO FOR FREE APPS). WE ARE NOT LIABLE FOR LOSS OF VIRTUAL REWARDS (COINS, XP, LIVES, POWER-UPS), BIBLE ANNOTATIONS, OR LOCAL DATA DUE TO APP UPDATES, DEVICE FAILURE, OR DATA CLEARING.
     </div>
 
-    <h3>15. Third-Party Services</h3>
-    <p>The App integrates third-party services (Google AdMob, Firebase, Supabase). We are not responsible for their performance or content. Your use is subject to their own terms and privacy policies.</p>
+    <h3>17. Third-Party Services</h3>
+    <p>The App integrates third-party services (Google AdMob, Firebase, Supabase, Google Gemini AI, Google Play). We are not responsible for their performance, content, or availability. Your use is subject to their own terms and privacy policies.</p>
 
-    <h3>16. Termination</h3>
+    <h3>18. Termination</h3>
     <p>We reserve the right to terminate your access to the App at any time for conduct that violates these Terms or is harmful to others.</p>
 
-    <h3>17. Governing Law</h3>
+    <h3>19. Governing Law</h3>
     <p>These Terms are governed by applicable local law. Where required, disputes are subject to the competent courts of the developer's operating jurisdiction.</p>
 
-    <h3>18. Changes to These Terms</h3>
+    <h3>20. Changes to These Terms</h3>
     <p>We may modify these Terms at any time. The "Last Updated" date at the top of this page will be revised accordingly. Continued use after changes constitutes acceptance of the revised Terms.</p>
 
-    <h3>19. Contact Us</h3>
+    <h3>21. Contact Us</h3>
     <p>For questions or legal notices:<br/>
-    📧 <a href="mailto:oswaldstack@gmail.com">oswaldstack@gmail.com</a><br/>
+    📧 <a href="mailto:hello@oswaldstack.com">hello@oswaldstack.com</a><br/>
     Developer: OswaldStack</p>
   </div>
 </div>

@@ -143,7 +143,7 @@
 <div class="container">
   <div class="card">
     <h2>Privacy Policy</h2>
-    <span class="updated">Last Updated: April 25, 2026</span>
+    <span class="updated">Last Updated: May 2, 2026 &nbsp;·&nbsp; App Version: 1.0.6+10</span>
 
     <h3>1. Introduction</h3>
     <p>Tamil Bible With AI ("App", "we", "us", "our") is developed and operated by OswaldStack. We are committed to protecting your personal information and your right to privacy. This policy describes what information we collect, how we use it, and your rights.</p>
@@ -195,7 +195,7 @@
       <tr>
         <td>AI chat messages (text)</td>
         <td class="yes">Yes (transient)</td>
-        <td>Supabase Edge Function</td>
+        <td>Supabase Edge Function → Google Gemini AI</td>
         <td>Generate AI Bible response</td>
         <td>Yes (HTTPS)</td>
         <td>Not retained server-side after response</td>
@@ -225,6 +225,14 @@
         <td>—</td>
       </tr>
       <tr>
+        <td>Local WiFi IP address</td>
+        <td class="yes">Yes (in-memory only)</td>
+        <td class="no">No</td>
+        <td>Church Presenter: broadcast to devices on the same local network only</td>
+        <td>N/A (LAN only, never leaves device network)</td>
+        <td>N/A – session-only, discarded when Presenter stops</td>
+      </tr>
+      <tr>
         <td>Quiz progress, coins, XP, lives</td>
         <td>Device only</td>
         <td class="no">No</td>
@@ -233,10 +241,26 @@
         <td>Yes – clear app data / uninstall</td>
       </tr>
       <tr>
+        <td>Bible reading progress &amp; annotations</td>
+        <td>Device only</td>
+        <td class="no">No</td>
+        <td>Reading progress, highlights, notes, bookmarks</td>
+        <td>N/A (local)</td>
+        <td>Yes – clear app data / uninstall</td>
+      </tr>
+      <tr>
         <td>Song favourites</td>
         <td>Device only</td>
         <td class="no">No</td>
         <td>Remember starred songs</td>
+        <td>N/A (local)</td>
+        <td>Yes – clear app data / uninstall</td>
+      </tr>
+      <tr>
+        <td>Language preference (Tamil / English)</td>
+        <td>Device only</td>
+        <td class="no">No</td>
+        <td>Display UI in selected language</td>
         <td>N/A (local)</td>
         <td>Yes – clear app data / uninstall</td>
       </tr>
@@ -269,7 +293,7 @@
     <p>The App locally tracks your daily usage streak (consecutive days of opening the App) and quiz completion status to power the Engagement Strip on the home screen. This data is stored exclusively on your device and is never uploaded to any server.</p>
 
     <p><strong>g) AI Chat</strong></p>
-    <p>Your text query is sent to our backend (Supabase Edge Function) to generate a response. The message is processed transiently and is not stored server-side after the response is returned. Chat history is stored on-device for app functionality only. We do not sell your personal data.</p>
+    <p>Your text query is sent to our backend (Supabase Edge Function) which forwards it to the Google Gemini AI API to generate a response. The message is processed transiently and is not stored server-side after the response is returned. Chat history is stored on-device (SQLite) for app functionality only. We do not sell your personal data. Each session is rate-limited to preserve fair usage.</p>
 
     <p><strong>h) Audio Bible &amp; Screen Wake-Lock</strong></p>
     <p>When using the Audio Bible feature, the App requests a temporary screen wake-lock to keep your device display on while scripture is being read aloud. This wake-lock is automatically released when audio playback stops or is paused. No data is collected or transmitted as part of this feature.</p>
@@ -297,6 +321,26 @@
       ✅ All quiz reward data is local-only. None of these values are sent to our servers, used for advertising targeting, or shared with any third party.
     </div>
 
+    <p><strong>m) Bible Reading Progress, Highlights &amp; Notes</strong></p>
+    <p>The App stores your Bible reading progress (which chapters you have marked as read), verse highlights (colour codes), personal notes, and bookmarks exclusively on your device. This data is never transmitted to any server and is permanently deleted when you clear app data or uninstall the App.</p>
+
+    <p><strong>n) Church WiFi Presenter</strong></p>
+    <p>The Church Presenter feature creates a temporary local HTTP/WebSocket server on your device so that other devices on the <strong>same WiFi network</strong> can display Bible verses and song lyrics on a projector or screen. To do this, the App reads your device's local network IP address. This IP address is:</p>
+    <ul>
+      <li>Used <em>only in-memory</em> during an active Presenter session.</li>
+      <li>Shared only within your local network (e.g., church WiFi) — it is never transmitted to OswaldStack servers, Google, or any third party.</li>
+      <li>Automatically discarded when you stop the Presenter.</li>
+    </ul>
+    <div class="highlight">
+      ✅ The Presenter feature operates entirely on your local network. No slide content, song lyrics, or Bible verses are sent to any external server.
+    </div>
+
+    <p><strong>o) Language Preference (Tamil / English)</strong></p>
+    <p>Your UI language preference (Tamil or English) is stored locally on your device. This setting is never shared with any server or third party and is used solely to display the App interface in your chosen language.</p>
+
+    <p><strong>p) In-App Updates</strong></p>
+    <p>The App uses Google Play's In-App Update API to check for and download new versions. This process is handled entirely by Google Play and follows Google's standard privacy practices. We do not collect any additional data as part of this process.</p>
+
     <h3>4. How We Use Your Information</h3>
     <ul>
       <li><strong>FCM token:</strong> To send opted-in push notifications (Daily Verse and reminders).</li>
@@ -308,39 +352,45 @@
       <li><strong>Song Favourites:</strong> To remember and show your starred songs across sessions, stored only on your device.</li>
       <li><strong>Quiz Deck &amp; Cursor:</strong> To track which quiz questions you have seen and serve fresh, non-repeating questions, stored only on your device.</li>
       <li><strong>Quiz Rewards (Coins, XP, Lives, Power-ups):</strong> To power the in-app gamification system, stored only on your device.</li>
+      <li><strong>Bible annotations (highlights, notes, bookmarks, reading progress):</strong> To show your personal Bible study data within the App, stored only on your device.</li>
+      <li><strong>Local WiFi IP:</strong> To enable the Church Presenter feature on your local network only.</li>
+      <li><strong>Language preference:</strong> To display the App UI in your chosen language (Tamil or English).</li>
     </ul>
 
     <h3>5. Advertising (Google AdMob)</h3>
     <p>The App serves advertisements through Google AdMob. AdMob may use your device's Advertising ID to serve contextually relevant ads. Ads shown include:</p>
     <ul>
-      <li><strong>Banner ads</strong> — displayed on quiz and home screens.</li>
-      <li><strong>Interstitial ads</strong> — shown at natural break points (e.g. between quiz levels).</li>
-      <li><strong>Rewarded ads</strong> — shown only on your explicit request to earn lives or coins.</li>
+      <li><strong>Banner ads</strong> — displayed on the home screen during normal app use.</li>
+      <li><strong>Interstitial ads</strong> — shown at natural break points (e.g. between quiz levels, approximately every 2nd level).</li>
+      <li><strong>Rewarded ads</strong> — shown only on your explicit request to earn in-app rewards (lives, coins, or AI chat energy).</li>
     </ul>
-    <p>You can opt out of personalised advertising at any time via <strong>Android Settings → Privacy → Ads → Opt out of Ads Personalisation</strong>, or by resetting your Advertising ID.</p>
+    <p>Ad content is configured with a <strong>maximum rating of "Teens" (T)</strong> — adult content ads are blocked. You can opt out of personalised advertising at any time via <strong>Android Settings → Privacy → Ads → Opt out of Ads Personalisation</strong>, or by resetting your Advertising ID.</p>
     <p>AdMob's privacy policy: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>.</p>
 
     <h3>6. Third-Party Services</h3>
     <ul>
       <li><a href="https://policies.google.com/privacy" target="_blank">Google AdMob</a> – Advertising</li>
       <li><a href="https://firebase.google.com/support/privacy" target="_blank">Firebase (Google)</a> – Crashlytics, Analytics &amp; Push Messaging</li>
-      <li><a href="https://supabase.com/privacy" target="_blank">Supabase</a> – AI chat backend &amp; notification tokens</li>
+      <li><a href="https://supabase.com/privacy" target="_blank">Supabase</a> – AI chat backend, song lyrics database &amp; notification tokens</li>
+      <li><a href="https://policies.google.com/privacy" target="_blank">Google Gemini AI</a> – AI response generation (via Supabase Edge Function proxy)</li>
+      <li><a href="https://play.google.com/about/play-terms/" target="_blank">Google Play</a> – In-app updates distribution</li>
     </ul>
 
     <h3>7. Permissions We Request</h3>
     <ul>
-      <li><strong>INTERNET:</strong> Required for AI chat, push notifications, and downloading media templates.</li>
+      <li><strong>INTERNET:</strong> Required for AI chat, push notifications, song lyrics, and downloading media templates.</li>
       <li><strong>POST_NOTIFICATIONS:</strong> Required on Android 13+ to show Daily Verse notifications.</li>
       <li><strong>READ_MEDIA_IMAGES / READ_MEDIA_VIDEO:</strong> Required to select background images or videos from your gallery for verse cards.</li>
       <li><strong>RECEIVE_BOOT_COMPLETED:</strong> Required to re-register WorkManager background tasks after device restart.</li>
       <li><strong>WAKE_LOCK:</strong> Required to keep the screen active during Audio Bible playback. Released automatically when playback ends.</li>
+      <li><strong>ACCESS_WIFI_STATE / ACCESS_NETWORK_STATE:</strong> Required to detect your device's local IP address for the Church WiFi Presenter feature. No data is transmitted externally.</li>
     </ul>
     <div class="highlight">
       ✅ All permissions are requested only when needed and only with your explicit consent. No permission is used for any purpose beyond its stated function.
     </div>
 
     <h3>8. Children's Privacy</h3>
-    <p>This app is rated for a general audience. We do not knowingly collect personal information from children under 13. The App is not directed at children. Advertisements are configured via AdMob as <strong>non-child-directed</strong>. If you believe a child has provided personal data, contact us at <a href="mailto:oswaldstack@gmail.com">oswaldstack@gmail.com</a>, and we will review and delete data where legally required.</p>
+    <p>This app is rated for a general audience (13+). We do not knowingly collect personal information from children under 13. The App is not directed at children. Advertisements are configured via AdMob as <strong>non-child-directed</strong>, with a maximum ad content rating of "Teens" (T). If you believe a child has provided personal data, contact us at <a href="mailto:hello@oswaldstack.com">hello@oswaldstack.com</a>, and we will review and delete data where legally required.</p>
 
     <h3>9. Your Rights</h3>
     <p>Depending on your jurisdiction, you may have the right to:</p>
@@ -350,7 +400,7 @@
       <li>Opt out of personalised advertising (via Google Ads Settings on your device).</li>
       <li>Request that we correct inaccurate data we hold.</li>
     </ul>
-    <p>To exercise these rights, email <a href="mailto:oswaldstack@gmail.com">oswaldstack@gmail.com</a>. We will respond within 30 days.</p>
+    <p>To exercise these rights, email <a href="mailto:hello@oswaldstack.com">hello@oswaldstack.com</a>. We will respond within 30 days.</p>
 
     <h3>10. Account &amp; Data Deletion</h3>
     <p>The App does not require account creation. However, the following server-side data can be deleted upon request:</p>
@@ -359,29 +409,30 @@
     </ul>
     <p>To request deletion:</p>
     <ol style="padding-left:20px; margin-bottom:8px;">
-      <li>Email <a href="mailto:oswaldstack@gmail.com">oswaldstack@gmail.com</a> with subject line <em>"Data Deletion Request"</em>.</li>
+      <li>Email <a href="mailto:hello@oswaldstack.com">hello@oswaldstack.com</a> with subject line <em>"Data Deletion Request"</em>.</li>
       <li>Include your approximate device model and the date you last received a notification (to help us identify your token).</li>
       <li>We will delete the record within <strong>14 days</strong> and confirm by reply.</li>
     </ol>
-    <p>All local data (quiz progress, coins, XP, lives, song favourites, reading streaks) is stored only on your device and is permanently deleted when you <strong>clear app data</strong> or <strong>uninstall the App</strong>.</p>
+    <p>All local data (quiz progress, coins, XP, lives, song favourites, reading streaks, Bible annotations, language preference) is stored only on your device and is permanently deleted when you <strong>clear app data</strong> or <strong>uninstall the App</strong>.</p>
 
     <h3>11. Data Retention</h3>
     <ul>
       <li>FCM tokens are retained until you uninstall the App or request deletion.</li>
       <li>Crash reports are retained for up to 90 days by Firebase.</li>
       <li>AI chat queries are not retained server-side after a response is returned.</li>
-      <li>Local streak, quiz data, quiz deck progress, reward economy data, song favourites, and song title cache are removed when you clear app data or uninstall the App.</li>
+      <li>Local streak, quiz data, quiz deck progress, reward economy data, song favourites, Bible annotations, reading progress, and language preference are removed when you clear app data or uninstall the App.</li>
+      <li>Church Presenter session data (local IP) is in-memory only and is discarded when the Presenter is stopped.</li>
     </ul>
 
     <h3>12. Data Security</h3>
-    <p>We implement commercially reasonable security measures including HTTPS encryption for all network communication, Supabase Row-Level Security (RLS) for database protection, and no plaintext storage of sensitive credentials.</p>
+    <p>We implement commercially reasonable security measures including HTTPS encryption for all network communication, Supabase Row-Level Security (RLS) for database protection, and no plaintext storage of sensitive credentials. The Church Presenter operates entirely on your local WiFi network and does not expose any data to the internet.</p>
 
     <h3>13. Changes to This Policy</h3>
     <p>We may update this Privacy Policy from time to time. The "Last Updated" date at the top of this page will be revised accordingly. Continued use of the App after changes constitutes your acceptance.</p>
 
     <h3>14. Contact Us</h3>
     <p>For questions, data requests, or concerns:<br/>
-    📧 <a href="mailto:oswaldstack@gmail.com">oswaldstack@gmail.com</a><br/>
+    📧 <a href="mailto:hello@oswaldstack.com">hello@oswaldstack.com</a><br/>
     Developer: OswaldStack</p>
   </div>
 </div>
